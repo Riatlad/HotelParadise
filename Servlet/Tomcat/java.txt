@@ -1,0 +1,56 @@
+package com.hotel;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/ClienteServer")
+public class ClienteServer extends HttpServlet{
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		String cadenaPrueba = request.getParameter("peticion");
+		
+		response.setContentType("text/html;charset=UTF-8");
+		
+		String respuesta="";
+		
+		switch(cadenaPrueba) {
+			case "Holamundo":
+				respuesta="Petición recibida con éxito... HOLA MUNDO!!!";
+				break;
+			default:
+				respuesta="Conexión realizada, parámetros desconocidos.";
+				break;
+		}
+		try (PrintWriter out = response.getWriter()) {
+			out.print("<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                        "<title>Probando...</title>\n" +
+                        "<meta charset=\"UTF-8\">\n" +
+                        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "</head>\n" +
+                    "<body><p>Resultado de la petición:</p>\n" +
+                        respuesta +
+                    "</body>\n" +
+                    "</html>");
+		}
+			
+	}
+	
+}

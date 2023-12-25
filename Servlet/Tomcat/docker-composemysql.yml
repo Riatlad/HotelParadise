@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+     - MYSQL_USER=raul
+     - MYSQL_PASSWORD=password
+     - MYSQL_ROOT_PASSWORD=mipassword
+    volumes:
+     - ./WebApps/data:/var/lib/mysql
+    ports: 
+     - 3307:3306
+  tomcat:
+   build:
+    context: .
+    dockerfile: dockerfile
+   volumes:
+    - ./WebApps/java:/usr/local/tomcat/webapps
+   ports:
+    - 7777:8080
+   depends_on:
+    - mysql
+  phpmyadmin:
+   image: phpmyadmin:latest
+   restart: always
+   ports:
+    - 8899:8899
+   depends_on:
+    - mysql
