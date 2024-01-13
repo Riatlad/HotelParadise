@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Finalizar la activity para no volver a la login screen (bendisiones a internet)
                     finish();
-
                 } else {
                     tvError.setText("Login incorrecto.");
                 }
@@ -49,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isValidCredentials(String username, String password) {
-        if(username == "cliente" && password == "usuario" || username == "admin" && password == "admin") {
-            return true;
-        }
-        return false;
+        return (username.equals("cliente") && password.equals("cliente") || username.equals("admin") && password.equals("admin"));
     }
 }
