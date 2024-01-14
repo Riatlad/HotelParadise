@@ -25,7 +25,7 @@ public class Controlador {
         return respuesta;
     }
     public String hacerInsert(String nombre, String apellidos) {
-        String respuesta = conectar.insertarAlumno(nombre, apellidos);
+        String respuesta = "";//conectar.insertarAlumno(nombre, apellidos);
         return respuesta;
     }
 }

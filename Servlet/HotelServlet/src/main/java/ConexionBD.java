@@ -9,6 +9,9 @@ import java.util.Properties;
 public class ConexionBD {
     private Connection conexion;
     public static int contador=0;
+    private ResultSet rs;
+    private Statement st;
+    private Respuesta respuesta;
 
     public ConexionBD() {
         try {
@@ -16,7 +19,7 @@ public class ConexionBD {
                 conexion.close();
             }
             DriverManager.registerDriver(new org.postgresql.Driver());
-            this.conexion = DriverManager.getConnection("jdbc:postgresql://db:5432/pruebashotel?user=postgres&password=mipassword");
+            this.conexion = DriverManager.getConnection("jdbc:postgresql://db:5432/hotelparadise?user=postgres&password=mipassword");
             if (conexion != null) {
                 System.out.print("Conexion realizada 1");
             }
@@ -24,8 +27,32 @@ public class ConexionBD {
             System.out.println(error);
             error.printStackTrace();
         }
+        respuesta = new Respuesta();
     }
 
+    public String selectHabitacion() throws SQLException {
+        ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
+        if (conexion != null)
+            return "NO HAY CONEXIÓN CON LA BASE DE DATOS";
+        st = conexion.createStatement();
+        rs = st.executeQuery("SELECT * FROM habitacion");
+        while (rs.next())
+            habitaciones.add(new Habitacion(rs.getString(1)));
+        Respuesta.habitacionesJson(habitaciones);
+        return "";
+    }
+    public String selectCliente() throws SQLException {
+        ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+        if (conexion != null)
+            return "NO HAY CONEXIÓN CON LA BASE DE DATOS";
+        st = conexion.createStatement();
+        rs = st.executeQuery("SELECT * FROM habitacion");
+        while (rs.next())
+            clientes.add(new Cliente(rs.getString(1)));
+        Respuesta.clientesJson(clientes);
+        return "";
+    }
+/*
     public ArrayList<PruebasHotel> hacerSelectPrueba() {
         ArrayList<PruebasHotel> listado = new ArrayList<>();
         try {
@@ -53,6 +80,6 @@ public class ConexionBD {
         } catch (SQLException error) {
             return "error";
         }
-    }
+    }*/
 }
 
