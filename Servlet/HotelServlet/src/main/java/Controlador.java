@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Controlador {
-    private static Controlador singleton;;
+    private static Controlador singleton;
     private ConexionBD conectar;
 
     private Controlador() {
@@ -13,7 +13,8 @@ public class Controlador {
         }
         return singleton;
     }
-    public String hacerPrueba() {
+   /*
+   public String hacerPrueba() {
         ArrayList<PruebasHotel> lista = conectar.hacerSelectPrueba();
         String respuesta="<p>Listado de participantes:</p>\n";
         String respuestaBucle="";
@@ -27,6 +28,13 @@ public class Controlador {
     public String hacerInsert(String nombre, String apellidos) {
         String respuesta = conectar.insertarAlumno(nombre, apellidos);
         return respuesta;
+    }
+    */
+    public String obtenerHabitaiones(){
+        return conectar.selectHabitacion();
+    }
+    public String obtenerClientes(){
+        return conectar.selectClientes();
     }
 }
 

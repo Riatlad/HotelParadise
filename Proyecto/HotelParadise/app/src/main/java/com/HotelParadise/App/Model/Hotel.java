@@ -1,6 +1,7 @@
 package com.HotelParadise.App.Model;
 
-import java.lang.reflect.Array;
+
+
 import java.util.ArrayList;
 
 public class Hotel {
