@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mipassword
+      POSTGRES_DB: hotelparadise
+    volumes:
+      - ./WebApps/datos:/var/lib/postgresql/data  # Utiliza un directorio separado para la persistencia de datos de PostgreSQL
+    networks:
+      - minetwork
+
+  tomcat:
+    image: tomcat:latest
+    volumes:
+      - ./WebApps/java:/usr/local/tomcat/webapps
+      - ./WebApps/war:/usr/local/tomcat/webapps/ROOT  # Monta el directorio que contiene el archivo WAR
+    ports:
+      - 7777:8080
+    depends_on:
+      - db
+    networks:
+      - minetwork
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 8899:8899
+    depends_on:
+      - db
+    networks:
+      - minetwork
+
+networks:
+  minetwork:
