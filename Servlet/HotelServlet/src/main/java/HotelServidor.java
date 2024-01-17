@@ -8,8 +8,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/Servlet")
-public class Servlet extends HttpServlet{
+public class HotelServidor extends HttpServlet{
     private static final long serialVersionUID = 1L;
+
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,8 +49,8 @@ public class Servlet extends HttpServlet{
         Controlador.getSingleton();
 
         String cadenaPrueba = request.getParameter("peticion");
-        String nombre =request.getParameter("nombre");
-        String apellidos = request.getParameter("apellidos");
+        //String nombre =request.getParameter("nombre");
+        //String apellidos = request.getParameter("apellidos");
 
         response.setContentType("text/html;charset=UTF-8");
 
@@ -56,14 +58,14 @@ public class Servlet extends HttpServlet{
 
         if (cadenaPrueba != null) {  // Verificar si cadenaPrueba no es null
             switch(cadenaPrueba) {
-                case "Holamundo":
+                /*case "Holamundo":
                     respuesta="Petición recibida con éxito... HOLA MUNDO!!!";
+                    break;*/
+                case "habitaciones":
+                    respuesta=Controlador.getSingleton().obtenerHabitaiones();
                     break;
-                case "select":
-                    respuesta=Controlador.getSingleton().hacerPrueba();
-                    break;
-                case "insert":
-                    respuesta=Controlador.getSingleton().hacerInsert(nombre, apellidos);
+                case "clientes":
+                    respuesta=Controlador.getSingleton().obtenerClientes();
                     break;
                 default:
                     respuesta="Conexión realizada, el parámetro "+cadenaPrueba+" es desconocido...";
@@ -74,7 +76,7 @@ public class Servlet extends HttpServlet{
         }
 
         try (PrintWriter out = response.getWriter()) {
-            out.print("<!DOCTYPE html>\n" +
+            /*out.print("<!DOCTYPE html>\n" +
                     "<html>\n" +
                     "<head>\n" +
                     "<title>Probando...</title>\n" +
@@ -84,7 +86,9 @@ public class Servlet extends HttpServlet{
                     "<body><p>Resultado de la petición:</p>\n" +
                     respuesta +
                     "</body>\n" +
-                    "</html>");
+                    "</html>");*/
+            out.print(respuesta);
+
         }
     }
 }
