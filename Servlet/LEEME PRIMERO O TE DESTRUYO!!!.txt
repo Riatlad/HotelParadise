@@ -23,3 +23,5 @@ Información sobre el servlet del hotel de obligada lectura.
    Abrir el puerto 7777 en vuestro router.
    Ir a una página que os diga vuestra IP.
    hacer las mismas llamadas que en localhost, pero sustituyendo localhost por vuestra IP.
+
+rama creada raulFeature
