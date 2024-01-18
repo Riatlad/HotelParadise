@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Controlador {
@@ -30,11 +31,11 @@ public class Controlador {
         return respuesta;
     }
     */
-    public String obtenerHabitaiones(){
+    public String obtenerHabitaiones() {
         return conectar.selectHabitacion();
     }
-    public String obtenerClientes(){
-        return conectar.selectClientes();
+    public String obtenerClientes() {
+        return conectar.selectCliente();
     }
 }
 

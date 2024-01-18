@@ -1,5 +1,4 @@
 public class Cliente {
-    private String idCliente;
     private String nombre;
     private String apellidos;
     private String email;
@@ -8,8 +7,7 @@ public class Cliente {
     private String DNI;
     private String numTarjetaCredito;
 
-    public Cliente(String idCliente, String nombre, String apellidos, String email, String telefono, String direccion, String DNI, String numTarjetaCredito) {
-        this.idCliente = idCliente;
+    public Cliente(String nombre, String apellidos, String email, String telefono, String direccion, String DNI, String numTarjetaCredito) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
@@ -17,10 +15,6 @@ public class Cliente {
         this.direccion = direccion;
         this.DNI = DNI;
         this.numTarjetaCredito = numTarjetaCredito;
-    }
-
-    public String getIdCliente() {
-        return idCliente;
     }
 
     public String getNombre() {
