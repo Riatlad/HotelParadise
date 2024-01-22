@@ -1,5 +1,0 @@
-# Ignorar todos los archivos y carpetas en la carpeta datos/
-Servlet/Tomcat/WebApps/datos/*
-
-# Pero permitir la inclusión de .gitkeep en todas las carpetas
-!Servlet/Tomcat/WebApps/datos/**/.gitkeep

@@ -1,3 +1,5 @@
+EL QUE TOQUE Tomcat/WebApps/datos SIN HACER LUEGO UN git add -A LO MATO!!!!!!!!! -Rueda
+
 Archivo previamente llamado LEEME PRIMERO O TE DESTRUYO!!!.txt (gracias raúl)
 
 Información sobre el servlet del hotel de obligada lectura.
