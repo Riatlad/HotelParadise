@@ -1,0 +1,30 @@
+Archivo previamente llamado LEEME PRIMERO O TE DESTRUYO!!!.txt (gracias raúl)
+
+Información sobre el servlet del hotel de obligada lectura.
+
+- 1. ESTE ES UN PROYECTO HECHO EN INTELLIJ IDEA ULTIMATE... Así que si lo vais a abrir teneis que tener instalado el intellij idea ultimate, si no lo teneis os abris una cuenta en jetbrains de estudiante y obteneis una licencia de estudiante. >>>---CUIDAO CON ABRIRLO EN OTROS IDE PORQUE PODEIS JODER EL PROYECTO...---<<<
+
+- 2. NO TOQUEIS LAS DEPENDENCIAS NI LAS LIBRERIAS DEL PROYECTO SI NO SABEIS LO QUE ESTÁIS HACIENDO!!!... quien toque el pom, le voy a hacer POM!
+
+- 3. En la carpeta que pone "tomcat" está el docker compose de prueba, recordad mirar los puertos de todo el tinglado si vais a probar el proyecto. No es necesario tocar el directorio "apache-tomcat-10.1.17", ya que es el directorio de instalación local del tomcat para las pruebas de intelliJ, y no hay que hacer nada allí.
+
+- 4. El archivo WAR está en WebApps/java, si alguien compila un nuevo WAR (que sepa lo que esté haciendo a ser posible), allí es donde lo debe soltar, borrando el war antiguo que esta ahí.
+
+- 5. Si haceis commits de los java, haced commits solo de los archivos que toqueis, no la lieis con otras cosas.
+
+- 6. Probar el servlet:
+   - http://localhost:7777/HotelServlet
+   Da un mensaje de hola mundo, no os lo esperábais eeeeh!
+   - http://localhost:7777/HotelServlet/Servlet?peticion=todo
+   Hace un select de todas las tablas en la base de datos
+   - http://localhost:7777/HotelServlet/Servlet?peticion=clientes ó reservas ó habitaciones ó suplementos ó precios
+   Hace un select de la tabla correspondiente en la base de datos
+
+   - http://localhost:7777/HotelServlet/Servlet?peticion=insert&nombre=LOQUESEA&apellidos=LOQUESEA
+   Hace un insert en la base de datos de prueba, tenéis que sustituir los "LOQUESEA" por lo que sea que querais guardar. Esto aún no está implementado
+
+- 7. Probar el servlet desde otra máquina que no es localhost:
+   Montar el tinglado con el docker-compose up
+   Abrir el puerto 7777 en vuestro router.
+   Ir a una página que os diga vuestra IP.
+   hacer las mismas llamadas que en localhost, pero sustituyendo localhost por vuestra IP.
