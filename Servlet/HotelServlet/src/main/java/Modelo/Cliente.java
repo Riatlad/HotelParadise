@@ -11,11 +11,7 @@ public class Cliente {
     private String user;
     private String passwd;
 
-<<<<<<< HEAD:Servlet/HotelServlet/src/main/java/Modelo/Cliente.java
     public Cliente(String nombre, String apellidos, String email, String telefono, String direccion, String DNI, String numTarjetaCredito,String user, String passwd) {
-=======
-    public Cliente(String nombre, String apellidos, String email, String telefono, String direccion, String DNI, String numTarjetaCredito) {
->>>>>>> develop:Servlet/HotelServlet/src/main/java/Cliente.java
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
@@ -27,10 +23,7 @@ public class Cliente {
         this.passwd=passwd;
     }
 
-<<<<<<< HEAD:Servlet/HotelServlet/src/main/java/Modelo/Cliente.java
 
-=======
->>>>>>> develop:Servlet/HotelServlet/src/main/java/Cliente.java
     public String getNombre() {
         return nombre;
     }
