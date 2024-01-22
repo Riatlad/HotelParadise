@@ -1,15 +1,13 @@
 public class Habitacion {
-    String idHabitacion;
-    String tipoHabitacion;
-    float preciobase;
-    boolean disponibilidad;
-    int capacidadMaxima;
+    private String idHabitacion;
+    private String tipoHabitacion;
+    private String estado;
+    private String capacidadMaxima;
 
-    public Habitacion(String idHabitacion, String tipoHabitacion, float preciobase, boolean disponibilidad, int capacidadMaxima) {
+    public Habitacion(String idHabitacion, String tipoHabitacion, String estado, String capacidadMaxima) {
         this.idHabitacion = idHabitacion;
         this.tipoHabitacion = tipoHabitacion;
-        this.preciobase = preciobase;
-        this.disponibilidad = disponibilidad;
+        this.estado=estado;
         this.capacidadMaxima = capacidadMaxima;
     }
 
@@ -21,15 +19,11 @@ public class Habitacion {
         return tipoHabitacion;
     }
 
-    public float getPreciobase() {
-        return preciobase;
+    public String getEstado() {
+        return estado;
     }
 
-    public boolean isDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public int getCapacidadMaxima() {
+    public String getCapacidadMaxima() {
         return capacidadMaxima;
     }
 }
