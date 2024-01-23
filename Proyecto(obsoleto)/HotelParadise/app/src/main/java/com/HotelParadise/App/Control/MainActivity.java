@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isValidCredentials(String username, String password) {
+    protected boolean isValidCredentials(String username, String password) {
         return (username.equals("cliente") && password.equals("cliente") || username.equals("admin") && password.equals("admin"));
     }
 }

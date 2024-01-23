@@ -36,8 +36,8 @@ public class ClienteViewAdapter extends RecyclerView.Adapter<ClienteViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ClienteViewHolder holder, int position) {
         holder.setNombre(this.mList.get(position).getNombre());
-        holder.setApellido(this.mList.get(position).getApellido());
-        holder.setCorreo(this.mList.get(position).getCorreo());
+        holder.setApellido(this.mList.get(position).getApellidos());
+        holder.setCorreo(this.mList.get(position).getEmail());
         holder.setTelefono(this.mList.get(position).getTelefono());
         holder.setDni(this.mList.get(position).getDni());
     }

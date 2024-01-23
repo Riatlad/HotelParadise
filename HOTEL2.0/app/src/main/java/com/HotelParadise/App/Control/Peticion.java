@@ -2,6 +2,7 @@ package com.HotelParadise.App.Control;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 
 import com.HotelParadise.App.Control.MainController;
@@ -26,7 +27,7 @@ import okhttp3.Response;
 public class Peticion {
     //ESTADO
     //Clase utilidad que no necesita nada más que poner a funcionar la peticion HTTPs
-    private static final String URL = "“localhost:7777/HotelServlet/HotelServidor?peticion=";
+    private static final String URL = "http://79.144.103.160:7777/HotelServlet/Servlet?peticion=";
     private String clienteOHabitacion;
     //COMPORTAMIENTO
     public Peticion(){
@@ -62,6 +63,7 @@ public class Peticion {
                     public void run() {
                         // Code will be executed on the main thread
                         if(clienteOHabitacion.equals("clientes")){
+                            Log.d("clienterecibido", respuesta);
                             MainController.getSingleton().parsearListadoClientes(respuesta);
                         } else {
                             MainController.getSingleton().parsearListadoHabitaciones(respuesta);
@@ -72,6 +74,7 @@ public class Peticion {
 
             public void onFailure(Call call, IOException e) {
                 String respuesta = e.getMessage();
+                e.printStackTrace();
                 Handler manejador = new Handler(Looper.getMainLooper());
 
                 // Send a task to the MessageQueue of the main thread
