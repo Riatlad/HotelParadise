@@ -30,15 +30,25 @@ public class MainController {
         }
         return mySingleController;
     }
-    public void obtenerClientes() {
-        peticion.listar("Clientes");
+    public void obtenerClientes(VistaClienteActivity vistaClienteActivity) {
+        this.vistaCliente=vistaClienteActivity;
+        peticion.listar("clientes");
     }
     public void parsearListadoClientes(String datos) {
         listadoClientes = respuesta.parsearClientes(datos);
         vistaCliente.cargarDatos(listadoClientes);
     }
+
+    public ArrayList<Cliente> getListadoClientes() {
+        return listadoClientes;
+    }
+
+    public ArrayList<Habitacion> getListadoHabitaciones() {
+        return listadoHabitaciones;
+    }
+
     public void obtenerHabitaciones() {
-        peticion.listar("Habitaciones");
+        peticion.listar("habitaciones");
     }
     public void parsearListadoHabitaciones(String datos) {
         listadoHabitaciones = respuesta.parsearHabitaciones(datos);
@@ -46,7 +56,7 @@ public class MainController {
     }
 
     public void setError(String respuesta) {
-
+        System.out.println(respuesta);
     }
 }
 

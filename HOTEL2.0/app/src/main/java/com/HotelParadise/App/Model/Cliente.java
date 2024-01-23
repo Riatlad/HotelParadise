@@ -1,7 +1,4 @@
 package com.HotelParadise.App.Model;
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 public class Cliente {
     private String dni;
@@ -45,7 +42,7 @@ public class Cliente {
         return numTarjeta;
     }
 
-
+    /*
     public static void JunitCliente() {
 
         Cliente cliente = new Cliente("123456789", "Juan", "Perez", "juan@example.com", "123456789", "1234-5678-9101-1121");
@@ -64,5 +61,5 @@ public class Cliente {
         assertEquals("juan@gmail.com", email);
         assertEquals("123456789", telefono);
         assertEquals("1234-5678-9101-2345", numTarjeta);
-    }
+    } */
 }

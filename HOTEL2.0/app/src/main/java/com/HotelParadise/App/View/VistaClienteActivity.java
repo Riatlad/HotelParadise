@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.HotelParadise.App.Control.MainController;
 import com.HotelParadise.App.Model.Cliente;
 import com.HotelParadise.App.R;
 
@@ -29,6 +30,7 @@ public class VistaClienteActivity extends Activity {
         listaClientes.setAdapter(miAdapter);
 
         listaClientes.setLayoutManager(new LinearLayoutManager(this));
+        MainController.getSingleton().obtenerClientes(this);
     }
 
     public void cargarDatos(ArrayList<Cliente> clientes) {
@@ -37,6 +39,5 @@ public class VistaClienteActivity extends Activity {
             mList.add(item);
         }
         miAdapter.notifyDataSetChanged();
-    }
     }
 }
