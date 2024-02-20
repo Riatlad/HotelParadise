@@ -9,3 +9,5 @@ Infraestructura del proyecto: [HotelParadise_Infrastructure](https://github.com/
 Base de datos del proyecto: [HotelParadise_DataBase](https://github.com/Riatlad/HotelParadise_DataBase)
 
 Aplicación del proyecto: [HotelParadise_Application](https://github.com/Riatlad/HotelParadise_Application/)
+
+Servlet: [HotelParadise_Servlet](https://github.com/Riatlad/HotelParadise_Servlet)
